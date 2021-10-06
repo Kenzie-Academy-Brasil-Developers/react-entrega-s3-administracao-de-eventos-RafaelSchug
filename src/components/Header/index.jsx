@@ -18,16 +18,16 @@ const Header = ({selected}) => {
     return(
         <Container >
             <ul>
-                <li onClick={() => handleRoute('/')} style={{color: selected === 'home' && 'black'}}>
+                <li onClick={() => handleRoute('/')} className={selected === 'home' ? 'selected' : ''}>
                     <img src={homeIcon} alt="" /><span>Home</span>
                 </li>
-                <li onClick={() => handleRoute('/confraternization')}  style={{color: selected === 'confraternization' && 'black'}}>
+                <li onClick={() => handleRoute('/confraternization')}  className={selected === 'confraternization' ? 'selected' : ''}>
                     <img src={confratIcon} alt="" /><span>Confraternization</span>
                 </li>
-                <li onClick={() => handleRoute('/graduation')}  style={{color: selected === 'graduation' && 'black'}}>
+                <li onClick={() => handleRoute('/graduation')}  className={selected === 'graduation' ? 'selected' : ''}>
                     <img src={graduationIcon} alt="" /><span>Graduation</span>
                 </li>
-                <li onClick={() => handleRoute('/wedding')}  style={{color: selected === 'wedding' && 'black'}}>
+                <li onClick={() => handleRoute('/wedding')}  className={selected === 'wedding' ? 'selected' : ''}>
                     <img src={weddingIcon} alt="" /><span>Wedding</span>
                 </li>
             </ul>

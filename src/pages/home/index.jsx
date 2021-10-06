@@ -11,17 +11,20 @@ import {SiAddthis} from 'react-icons/si';
 
 const Home = () => {
 
-    const [drinks, setDrinks] = useState([])
+    const [drinks, setDrinks] = useState(JSON.parse(localStorage.getItem('@drinks_list')) || [])
 
 
     useEffect(()=> {
-        api.get()
+        if(!localStorage.getItem('@drinks_list')){
+            api.get()
             .then(res => {
                 const arrayOfDrinks = res.data;
                 setDrinks(arrayOfDrinks);
                 console.log(arrayOfDrinks);
+                localStorage.setItem('@drinks_list', JSON.stringify(arrayOfDrinks));
             })
             .catch(err => console.log(err));
+        }
     }, [])
 
     const {addToWeddingList} = useWedding();
