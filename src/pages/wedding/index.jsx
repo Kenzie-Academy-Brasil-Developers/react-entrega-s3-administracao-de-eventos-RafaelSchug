@@ -18,6 +18,7 @@ const Wedding = () => {
                         <DrinkCard key={index}>
                             <h4>{item.name}</h4>
                             <img src={item.image_url} alt={item.name} />
+                            <p>Quantidade: {item.quantity}</p>
                             <button onClick={()=> removeFromWeddingList(item)}>Remover</button>
                         </DrinkCard>
                     )

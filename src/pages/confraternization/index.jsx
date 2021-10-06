@@ -18,6 +18,7 @@ const Confraternization = () => {
                         <DrinkCard key={index}>
                             <h4>{item.name}</h4>
                             <img src={item.image_url} alt={item.name} />
+                            <p>Quantidade: {item.quantity}</p>
                             <button onClick={() => removeFromConfraternizationList(item)}>Remover</button>
                         </DrinkCard>
                     )

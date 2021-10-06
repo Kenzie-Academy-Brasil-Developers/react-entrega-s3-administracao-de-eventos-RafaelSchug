@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom"
+import { Container } from "./style";
 
 const Header = () => {
     return(
-        <header style={{display: 'flex', gap:'10px', justifyContent:'center'}}>
+        <Container >
             <Link to='/'>Home</Link>
             <Link to='/confraternization'>Confraternization</Link>
             <Link to='/graduation'>Graduation</Link>
             <Link to='/wedding'>Wedding</Link>
-        </header>
+        </Container>
     )
 }
 

@@ -8,11 +8,19 @@ export const GraduationProvider = ({children}) => {
     const [graduationList, setGraduationList] = useState([]);
 
     const addToGraduationList = (item) => {
-        setGraduationList([...graduationList, item]);
+       
+        const isItemIncluded = graduationList.some(product => product.id === item.id);
+
+        if(!isItemIncluded) {
+            setGraduationList([...graduationList, {...item, quantity: 1}])
+        } else {
+            const newList = graduationList.map(product => product.id === item.id ? {...product, quantity: product.quantity + 1} : product)
+            setGraduationList(newList)
+        }
     }
 
     const removeFromGraduationList = (item) => {
-        const filteredList = graduationList.filter(gradList => gradList.id !== item.id);
+        const filteredList = graduationList.map(product => product.id === item.id ? {...product, quantity: product.quantity -1} : product ).filter(product => product.quantity !== 0);
         setGraduationList(filteredList);
     }
     

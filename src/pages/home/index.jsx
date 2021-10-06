@@ -36,12 +36,14 @@ const Home = () => {
                 return (
                     <DrinkCard key={index}>
                         <h4>{item.name}</h4>
-                        <img src={item.image_url} alt={item.name} style={{height: '100px'}} />
+                        <img src={item.image_url} alt={item.name} />
                         <p>Fabricação: {item.first_brewed}</p>
                         <p>Litros: {item.volume.value}L</p>
-                        <button onClick={() => addToConfraternizationList(item)}>Add to Confraternization List</button>
-                        <button onClick={() => addToGraduationList(item)}>Add to Graduation List</button>
-                        <button onClick={() => addToWeddingList(item)}>Add to Wedding List</button>
+                        <div className='add-to__container'>
+                            <button onClick={() => addToConfraternizationList(item)}>Add to Confraternization List</button>
+                            <button onClick={() => addToGraduationList(item)}>Add to Graduation List</button>
+                            <button onClick={() => addToWeddingList(item)}>Add to Wedding List</button>
+                        </div>
                     </DrinkCard>
                 )
             })}
