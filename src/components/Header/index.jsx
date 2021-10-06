@@ -1,13 +1,37 @@
-import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import { Container } from "./style";
+import homeIcon from '../../assets/imgs/home.png';
+import confratIcon from '../../assets/imgs/confraternization.png'
+import graduationIcon from '../../assets/imgs/graduation.png'
+import weddingIcon from '../../assets/imgs/wedding.png'
 
-const Header = () => {
+const Header = ({selected}) => {
+
+
+    const history = useHistory();
+
+    const handleRoute = (path) => {
+        history.push(path)
+    }
+
+
     return(
         <Container >
-            <Link to='/'>Home</Link>
-            <Link to='/confraternization'>Confraternization</Link>
-            <Link to='/graduation'>Graduation</Link>
-            <Link to='/wedding'>Wedding</Link>
+            <ul>
+                <li onClick={() => handleRoute('/')} style={{color: selected === 'home' && 'black'}}>
+                    <img src={homeIcon} alt="" /><span>Home</span>
+                </li>
+                <li onClick={() => handleRoute('/confraternization')}  style={{color: selected === 'confraternization' && 'black'}}>
+                    <img src={confratIcon} alt="" /><span>Confraternization</span>
+                </li>
+                <li onClick={() => handleRoute('/graduation')}  style={{color: selected === 'graduation' && 'black'}}>
+                    <img src={graduationIcon} alt="" /><span>Graduation</span>
+                </li>
+                <li onClick={() => handleRoute('/wedding')}  style={{color: selected === 'wedding' && 'black'}}>
+                    <img src={weddingIcon} alt="" /><span>Wedding</span>
+                </li>
+            </ul>
+            
         </Container>
     )
 }

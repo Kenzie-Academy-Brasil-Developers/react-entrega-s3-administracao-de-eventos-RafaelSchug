@@ -1,11 +1,11 @@
 import api from "../../services/api";
 import { useEffect, useState } from "react";
-import Header from "../../components/Header";
 import { useWedding } from "../../providers/wedding";
 import { useGraduation } from "../../providers/graduation";
 import { useConfraternization } from "../../providers/confraternization";
 import MainContainer from "../../components/MainContainer";
 import DrinkCard from "../../components/DrinkCard";
+import Header from "../../components/Header";
 
 
 const Home = () => {
@@ -29,8 +29,7 @@ const Home = () => {
 
     return (
         <>
-        <Header></Header>
-        <div>Home</div>
+        <Header selected='home'></Header>
         <MainContainer>
             {drinks.map((item, index)=> {
                 return (

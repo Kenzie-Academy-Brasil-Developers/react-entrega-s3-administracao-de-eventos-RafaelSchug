@@ -1,7 +1,7 @@
 import MainContainer from "../../components/MainContainer";
 import DrinkCard from "../../components/DrinkCard";
-import Header from "../../components/Header";
 import { useWedding } from "../../providers/wedding";
+import Header from "../../components/Header";
 
 const Wedding = () => {
 
@@ -9,9 +9,7 @@ const Wedding = () => {
 
     return (
         <>
-            <Header></Header>
-            <div>Wedding</div>
-            <div>Wedding List:</div>
+            <Header selected='wedding'></Header>
             <MainContainer>
                 {weddingList.map((item, index) => {
                     return (

@@ -9,9 +9,7 @@ const Graduation = () => {
 
     return (
         <>
-            <Header></Header>
-            <div>Graduation</div>
-            <div>Graduation List:</div>
+            <Header selected='graduation'></Header>
             <MainContainer>
                 {graduationList.map((item, index) => {
                     return (

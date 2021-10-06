@@ -9,9 +9,7 @@ const Confraternization = () => {
 
     return (
         <>
-            <Header></Header>
-            <div>Confraternization</div>
-            <div>Confraternization List:</div>
+            <Header selected='confraternization'></Header>
             <MainContainer>
                 {confraternizationList.map((item, index)=>{
                     return (
