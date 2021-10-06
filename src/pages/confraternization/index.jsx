@@ -1,24 +1,28 @@
+import DrinkCard from '../../components/DrinkCard';
 import Header from '../../components/Header';
+import MainContainer from '../../components/MainContainer';
 import { useConfraternization } from '../../providers/confraternization';
 
 const Confraternization = () => {
 
-    const {confraternizationList} = useConfraternization();
+    const {confraternizationList, removeFromConfraternizationList} = useConfraternization();
 
     return (
         <>
             <Header></Header>
             <div>Confraternization</div>
             <div>Confraternization List:</div>
-            <div>
+            <MainContainer>
                 {confraternizationList.map((item, index)=>{
                     return (
-                        <div key={index}>
+                        <DrinkCard key={index}>
                             <h4>{item.name}</h4>
-                        </div>
+                            <img src={item.image_url} alt={item.name} />
+                            <button onClick={() => removeFromConfraternizationList(item)}>Remover</button>
+                        </DrinkCard>
                     )
                 })}
-            </div>
+            </MainContainer>
         </>
     )
 }

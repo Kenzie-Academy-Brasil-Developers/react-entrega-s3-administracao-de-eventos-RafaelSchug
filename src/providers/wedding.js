@@ -9,14 +9,11 @@ export const WeedingProvider = ({children}) => {
 
     const addToWeddingList = (item) => {
         setWeddingList([...weddingList, item]);
-        console.log("adding to wedding list");
     }
 
     const removeFromWeddingList = (item) => {
-        // const newList = weddingList.filter(listItem => listItem.id !== item.id);
-        // setWeddingList(newList);
-
-        console.log('removing from wedding list')
+        const filteredList = weddingList.filter(wedList => wedList.id !== item.id);
+        setWeddingList(filteredList);
     }
     
     return (

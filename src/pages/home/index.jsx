@@ -4,6 +4,8 @@ import Header from "../../components/Header";
 import { useWedding } from "../../providers/wedding";
 import { useGraduation } from "../../providers/graduation";
 import { useConfraternization } from "../../providers/confraternization";
+import MainContainer from "../../components/MainContainer";
+import DrinkCard from "../../components/DrinkCard";
 
 
 const Home = () => {
@@ -29,21 +31,21 @@ const Home = () => {
         <>
         <Header></Header>
         <div>Home</div>
-        <div>
+        <MainContainer>
             {drinks.map((item, index)=> {
                 return (
-                    <div key={index}>
+                    <DrinkCard key={index}>
                         <h4>{item.name}</h4>
                         <img src={item.image_url} alt={item.name} style={{height: '100px'}} />
                         <p>Fabricação: {item.first_brewed}</p>
                         <p>Litros: {item.volume.value}L</p>
-                        <button onClick={() => addToWeddingList(item)}>Add to Wedding List</button>
-                        <button onClick={() => addToGraduationList(item)}>Add to Graduation List</button>
                         <button onClick={() => addToConfraternizationList(item)}>Add to Confraternization List</button>
-                    </div>
+                        <button onClick={() => addToGraduationList(item)}>Add to Graduation List</button>
+                        <button onClick={() => addToWeddingList(item)}>Add to Wedding List</button>
+                    </DrinkCard>
                 )
             })}
-        </div>
+        </MainContainer>
         </>
     )
 }

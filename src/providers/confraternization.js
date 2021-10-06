@@ -8,11 +8,11 @@ export const ConfraternizationProvider = ({children}) => {
 
     const addToConfraternizationList = (item) => {
         setConfraternizationList([...confraternizationList, item])
-        console.log('adding to confrat list');
     }
 
     const removeFromConfraternizationList = (item) => {
-        console.log('removing from confrat list');
+        const filteredList = confraternizationList.filter(confList => confList.id !== item.id);
+        setConfraternizationList(filteredList);
     }
 
     return (

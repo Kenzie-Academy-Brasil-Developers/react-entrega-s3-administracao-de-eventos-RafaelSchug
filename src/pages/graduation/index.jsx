@@ -1,24 +1,28 @@
+import DrinkCard from "../../components/DrinkCard";
 import Header from "../../components/Header";
+import MainContainer from "../../components/MainContainer";
 import { useGraduation } from "../../providers/graduation";
 
 const Graduation = () => {
 
-    const {graduationList} = useGraduation();
+    const {graduationList, removeFromGraduationList} = useGraduation();
 
     return (
         <>
             <Header></Header>
             <div>Graduation</div>
             <div>Graduation List:</div>
-            <div>
+            <MainContainer>
                 {graduationList.map((item, index) => {
                     return (
-                        <div key={index}>
+                        <DrinkCard key={index}>
                             <h4>{item.name}</h4>
-                        </div>
+                            <img src={item.image_url} alt={item.name} />
+                            <button onClick={() => removeFromGraduationList(item)}>Remover</button>
+                        </DrinkCard>
                     )
                 })}
-            </div>
+            </MainContainer>
         </>
     )
 }

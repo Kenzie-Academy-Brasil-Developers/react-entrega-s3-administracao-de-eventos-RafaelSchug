@@ -12,7 +12,8 @@ export const GraduationProvider = ({children}) => {
     }
 
     const removeFromGraduationList = (item) => {
-        console.log('removing from graduation list');
+        const filteredList = graduationList.filter(gradList => gradList.id !== item.id);
+        setGraduationList(filteredList);
     }
     
     return (

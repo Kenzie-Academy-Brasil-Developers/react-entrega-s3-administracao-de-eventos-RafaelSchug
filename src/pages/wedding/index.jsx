@@ -1,24 +1,28 @@
+import MainContainer from "../../components/MainContainer";
+import DrinkCard from "../../components/DrinkCard";
 import Header from "../../components/Header";
 import { useWedding } from "../../providers/wedding";
 
 const Wedding = () => {
 
-    const {weddingList} = useWedding();
+    const {weddingList, removeFromWeddingList} = useWedding();
 
     return (
         <>
             <Header></Header>
             <div>Wedding</div>
             <div>Wedding List:</div>
-            <div>
+            <MainContainer>
                 {weddingList.map((item, index) => {
                     return (
-                        <div key={index}>
+                        <DrinkCard key={index}>
                             <h4>{item.name}</h4>
-                        </div>
+                            <img src={item.image_url} alt={item.name} />
+                            <button onClick={()=> removeFromWeddingList(item)}>Remover</button>
+                        </DrinkCard>
                     )
                 })}
-            </div>
+            </MainContainer>
         </>
     )
 }
