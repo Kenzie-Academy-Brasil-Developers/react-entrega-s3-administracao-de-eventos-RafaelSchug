@@ -12,6 +12,12 @@ export const Container = styled.div`
     border: 1px solid #f7f7f7;
     border-radius: 5px;
     box-shadow: 0px 0px 4px 2px #d7d5d5;
+    transition: .1s linear;
+
+    :hover {
+        box-shadow: 0px 0px 4px 2px #d7d5d5, 0 0 2px 6px #b6b6b6;
+    }
+    
 
     img {
         height: 100px;
@@ -43,7 +49,7 @@ export const Container = styled.div`
     }
         
     > button:active svg {
-        transform: scale(1.3);
+        transform: scale(1.5);
     }
 
     .add-to__container {
@@ -82,11 +88,26 @@ export const Container = styled.div`
         }
         
         button:active svg {
-            transform: scale(1.3);
+            transform: scale(1.5);
         }
     }
 
+    @keyframes anim_card {
+        0% {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        80% {
+            transform: scale(1.1)
+        }
+    }
+
+    :nth-child(odd){
+        animation: anim_card .5s 1 ease-in-out;
+    }
+
+    :nth-child(even){
+        animation: anim_card .5s 1 ease-in-out -.1s;
+    }
     
-
-
 `

@@ -6,9 +6,9 @@ export const Container = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 50px 20px;
     gap: 20px;
-    max-width: 1000px;
+    max-width: 1300px;
     margin: 0 auto;
 
 
