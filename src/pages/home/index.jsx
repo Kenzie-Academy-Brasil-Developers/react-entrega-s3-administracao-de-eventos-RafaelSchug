@@ -6,6 +6,7 @@ import { useConfraternization } from "../../providers/confraternization";
 import MainContainer from "../../components/MainContainer";
 import DrinkCard from "../../components/DrinkCard";
 import Header from "../../components/Header";
+import {SiAddthis} from 'react-icons/si';
 
 
 const Home = () => {
@@ -39,9 +40,9 @@ const Home = () => {
                         <p>Fabricação: {item.first_brewed}</p>
                         <p>Litros: {item.volume.value}L</p>
                         <div className='add-to__container'>
-                            <button onClick={() => addToConfraternizationList(item)}>Add to Confraternization List</button>
-                            <button onClick={() => addToGraduationList(item)}>Add to Graduation List</button>
-                            <button onClick={() => addToWeddingList(item)}>Add to Wedding List</button>
+                            <button onClick={() => addToWeddingList(item)}><SiAddthis/> Wedding</button>
+                            <button onClick={() => addToGraduationList(item)}><SiAddthis/>  Graduation</button>
+                            <button onClick={() => addToConfraternizationList(item)}><SiAddthis/> Confraternization</button>
                         </div>
                     </DrinkCard>
                 )

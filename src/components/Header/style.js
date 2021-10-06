@@ -7,8 +7,9 @@ export const Container = styled.header`
     align-items: center;
     height: 60px;
     border-bottom: 1px solid #c3c3c3;
-    padding: 0 20px;
+    padding: 0 30px;
     gap: 10px;
+    width: 100vw;
 
     ul {
         display: flex;
