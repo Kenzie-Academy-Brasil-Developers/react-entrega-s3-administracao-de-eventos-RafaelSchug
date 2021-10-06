@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.header`
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     height: 60px;
     box-shadow: 0px 2px 2px 0px #d4d4d4;
@@ -30,6 +30,7 @@ export const Container = styled.header`
         font-weight: bold;
         color: #535353;
         padding: 0 10px;
+        position: relative;
     }
 
     ul li:hover {
@@ -42,24 +43,28 @@ export const Container = styled.header`
         color: #252525;
     }
 
-    /* ul li::after {
-        content: '';
+    ul li .list_counter {
         position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 4px;
-        background: black;
-        width: 2%;
-        margin: 0 auto;
-        transition: .2s linear;
+        top: 0;
+        right: 0;
+        pointer-events: none;
+        width: 30px;
+        line-height: 20px;
+        background: #c170ff;
+        border-radius: 4px;
+        color: white;
+        font-size: 14px;
     }
-
-    ul li:hover::after {
-        width: 100%;
-    } */
 
     img {
         height: 30px;
+    }
+
+
+    @media screen and (max-width: 650px){
+        ul li span {
+            display: none;
+        }
     }
 
 `
