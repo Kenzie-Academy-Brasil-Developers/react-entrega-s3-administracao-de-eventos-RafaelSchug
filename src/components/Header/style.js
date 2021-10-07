@@ -30,16 +30,17 @@ export const Container = styled.header`
         font-weight: bold;
         color: #535353;
         padding: 0 10px;
+        border-radius: 4px;
         position: relative;
     }
 
     ul li:hover {
         color: #252525;
+        box-shadow: inset 0 0 4px 0px #cac8c8;
     }
 
     li.selected {
-        box-shadow: inset 0 0 4px 0px #8a8a8a;
-        border-radius: 4px;
+        box-shadow: inset 0 0 4px 0px #8a8a8a!important;
         color: #252525;
     }
 
