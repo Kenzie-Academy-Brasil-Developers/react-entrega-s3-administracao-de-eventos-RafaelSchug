@@ -17,7 +17,7 @@ export const GraduationProvider = ({children}) => {
             const newList = graduationList.map(product => product.id === item.id ? {...product, quantity: product.quantity + 1} : product)
             setGraduationList(newList)
         }
-        toast.success(`[${item.name}] adicionado à Graduation`, {autoClose: 2000})
+        toast.success(`[${item.name}] added to Graduation`, {autoClose: 2000})
     }
 
     const removeFromGraduationList = (item) => {

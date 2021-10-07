@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
         text-align: center;
     }
 
+    body {
+        min-width: 280px;
+    }
+
     :root {
         --toastify-color-light: #fff;
         --toastify-color-dark: #121212;

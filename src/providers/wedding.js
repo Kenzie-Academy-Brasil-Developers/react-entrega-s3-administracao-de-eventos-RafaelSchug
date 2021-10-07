@@ -18,7 +18,7 @@ export const WeedingProvider = ({children}) => {
             setWeddingList(newList)
         }
 
-        toast.success(`[${item.name}] adicionado à Wedding`, {autoClose: 2000})
+        toast.success(`[${item.name}] added to Wedding`, {autoClose: 2000})
     }
 
     const removeFromWeddingList = (item) => {

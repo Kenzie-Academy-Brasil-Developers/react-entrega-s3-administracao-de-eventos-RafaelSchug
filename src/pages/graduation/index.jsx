@@ -19,17 +19,17 @@ const Graduation = () => {
                                 <DrinkCard key={index}>
                                     <h4>{item.name}</h4>
                                     <img src={item.image_url} alt={item.name} />
-                                    <p>Fabricação: {item.first_brewed}</p>
-                                    <p>Litros: {item.volume.value}L</p>
-                                    <p>Quantidade: {item.quantity}</p>
-                                    <button onClick={()=> removeFromGraduationList(item)}><FaMinusSquare/>Remover</button>
+                                    <p>First brewed in: {item.first_brewed}</p>
+                                    <p>Volume: {item.volume.value}L</p>
+                                    <p>Quantity: {item.quantity}</p>
+                                    <button onClick={()=> removeFromGraduationList(item)}><FaMinusSquare/>Remove</button>
                         
                                 </DrinkCard>
                             )
                         })
                 ) : (
                     <div className='placeholder'>
-                        <h4>Nenhum ítem adicionado</h4>
+                        <h4>This list looks empty</h4>
                         <img src={Graduation_bg} alt="" />
                     </div>
                 )}

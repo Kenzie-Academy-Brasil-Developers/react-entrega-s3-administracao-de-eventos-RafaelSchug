@@ -17,7 +17,7 @@ export const ConfraternizationProvider = ({children}) => {
             setConfraternizationList(newList)
         }
 
-        toast.success(`[${item.name}] adicionado à Confraternization`, {autoClose: 2000})
+        toast.success(`[${item.name}] added to Confraternization`, {autoClose: 2000})
         
     }
 

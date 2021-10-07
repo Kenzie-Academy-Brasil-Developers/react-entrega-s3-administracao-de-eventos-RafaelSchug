@@ -34,6 +34,7 @@ export const Container = styled.div`
 
     .placeholder h4 {
         color: #838383;
+        font-variant: petite-caps;
     }
 
     .placeholder img{

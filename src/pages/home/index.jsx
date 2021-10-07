@@ -40,8 +40,8 @@ const Home = () => {
                     <DrinkCard key={index}>
                         <h4>{item.name}</h4>
                         <img src={item.image_url} alt={item.name} />
-                        <p>Fabricação: {item.first_brewed}</p>
-                        <p>Litros: {item.volume.value}L</p>
+                        <p>First brewed in: {item.first_brewed}</p>
+                        <p>Volume: {item.volume.value}L</p>
                         <div className='add-to__container'>
                             <button onClick={() => addToWeddingList(item)}><SiAddthis/> Wedding</button>
                             <button onClick={() => addToGraduationList(item)}><SiAddthis/>  Graduation</button>

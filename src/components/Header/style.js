@@ -30,7 +30,7 @@ export const Container = styled.header`
         font-weight: bold;
         color: #535353;
         padding: 0 10px;
-        border-radius: 4px;
+        border-radius: 8px;
         position: relative;
     }
 
