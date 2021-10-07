@@ -20,7 +20,7 @@ const Confraternization = () => {
                                 <h4>{item.name}</h4>
                                 <img src={item.image_url} alt={item.name} />
                                 <p>First Brewed in: {item.first_brewed}</p>
-                                <p><strong>Volume:</strong> {item.volume.value}L</p>
+                                <p>Volume: {item.volume.value}L</p>
                                 <p>Quantity: {item.quantity}</p>
                                 <button onClick={()=> removeFromConfraternizationList(item)}><FaMinusSquare/>Remove</button>
                     
