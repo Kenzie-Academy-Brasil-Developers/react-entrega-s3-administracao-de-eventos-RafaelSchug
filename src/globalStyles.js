@@ -31,7 +31,10 @@ const GlobalStyle = createGlobalStyle`
 
     .Toastify__toast-theme--colored.Toastify__toast--success {
         font-weight: bold;
-        top: 40px;
+    }
+    
+    .Toastify__toast-container--top-right {
+        top: 4em;
     }
 
 `

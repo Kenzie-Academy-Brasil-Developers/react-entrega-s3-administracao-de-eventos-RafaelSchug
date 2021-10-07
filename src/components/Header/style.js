@@ -10,6 +10,9 @@ export const Container = styled.header`
     padding: 0 30px;
     gap: 10px;
     width: 100%;
+    position: fixed;
+    top: 0;
+    background: white;
 
     ul {
         display: flex;

@@ -10,6 +10,7 @@ export const Container = styled.div`
     gap: 20px;
     max-width: 1300px;
     margin: 0 auto;
+    margin-top: 80px;
 
     @keyframes placeholder_anim {
         0% {
@@ -22,7 +23,7 @@ export const Container = styled.div`
     }
 
     .placeholder {
-        min-height: calc(100vh - 160px);
+        min-height: calc(100vh - 200px);
         height: 100%;
         display: flex;
         flex-direction: column;

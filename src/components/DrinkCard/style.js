@@ -7,6 +7,7 @@ export const Container = styled.div`
     justify-content:space-around;
     border: 1px solid gray;
     padding: 10px;
+    min-width: 220px;
     width: 220px;
     min-height: 350px;
     border: 1px solid #f7f7f7;
@@ -117,6 +118,11 @@ export const Container = styled.div`
         }
 
         flex: 1;
+
+        > button {
+            background: linear-gradient(90deg, #f7891e, #ff3a3a);
+            color: #f1f1f1;
+         }
         
     }
 
