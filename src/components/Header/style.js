@@ -11,6 +11,7 @@ export const Container = styled.header`
     gap: 10px;
     width: 100%;
     position: fixed;
+    z-index: 1;
     top: 0;
     background: white;
 

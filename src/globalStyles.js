@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
         text-align: center;
     }
 
-    body {
+    body, header {
         min-width: 280px;
     }
 

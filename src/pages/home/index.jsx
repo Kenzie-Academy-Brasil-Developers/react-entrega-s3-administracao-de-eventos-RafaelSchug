@@ -7,11 +7,14 @@ import MainContainer from "../../components/MainContainer";
 import DrinkCard from "../../components/DrinkCard";
 import Header from "../../components/Header";
 import {SiAddthis} from 'react-icons/si';
+import { useSearch } from "../../providers/search";
+import Search from "../../components/Search";
 
 
 const Home = () => {
 
     const [drinks, setDrinks] = useState(JSON.parse(localStorage.getItem('@drinks_list')) || [])
+    const {filteredItems, setFilteredItems} = useSearch([]);
 
 
     useEffect(()=> {
@@ -24,8 +27,21 @@ const Home = () => {
                 localStorage.setItem('@drinks_list', JSON.stringify(arrayOfDrinks));
             })
             .catch(err => console.log(err));
-        }
+        } 
+
     }, [])
+
+    useEffect(()=> {
+        if(filteredItems.length > 0){
+            setDrinks(filteredItems);
+        } 
+    }, [filteredItems])
+
+    useEffect(()=> {
+        return () => {
+            setFilteredItems([]);
+        }
+    }, [setFilteredItems])
 
     const {addToWeddingList} = useWedding();
     const {addToGraduationList} = useGraduation();
@@ -35,6 +51,7 @@ const Home = () => {
         <>
         <Header selected='home'></Header>
         <MainContainer>
+            <Search></Search>
             {drinks.map((item, index)=> {
                 return (
                     <DrinkCard key={index}>
