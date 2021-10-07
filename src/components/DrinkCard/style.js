@@ -95,10 +95,10 @@ export const Container = styled.div`
     @keyframes anim_card {
         0% {
             opacity: 0;
-            transform: scale(0.5);
+            transform: scale(0.8);
         }
         80% {
-            transform: scale(1.1)
+            transform: scale(1.02)
         }
     }
 
@@ -107,7 +107,7 @@ export const Container = styled.div`
     }
 
     :nth-child(even){
-        animation: anim_card .5s 1 ease-in-out -.1s;
+        animation: anim_card .4s 1 ease-in-out;
     }
     
 `

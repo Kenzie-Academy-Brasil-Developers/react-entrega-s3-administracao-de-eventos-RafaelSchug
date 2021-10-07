@@ -11,6 +11,15 @@ export const Container = styled.div`
     max-width: 1300px;
     margin: 0 auto;
 
+    @keyframes placeholder_anim {
+        0% {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        80% {
+            transform: scale(1.01);
+        }
+    }
 
     .placeholder {
         min-height: calc(100vh - 100px);
@@ -20,6 +29,7 @@ export const Container = styled.div`
         align-items: center;
         justify-content: center;
         gap: 20px;
+        animation: placeholder_anim .3s 1 ease-in-out;
     }
 
     .placeholder h4 {

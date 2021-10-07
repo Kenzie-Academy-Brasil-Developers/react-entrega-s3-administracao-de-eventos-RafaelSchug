@@ -1,11 +1,10 @@
-import { createContext, useContext } from "react";
-import { useState } from "react";
+import { createContext, useContext, useState, useEffect  } from "react";
 
 export const WeedingContext = createContext();
 
 export const WeedingProvider = ({children}) => {
 
-    const [weddingList, setWeddingList] = useState([])
+    const [weddingList, setWeddingList] = useState(JSON.parse(localStorage.getItem('@wedding_list')) || [])
 
     const addToWeddingList = (item) => {
         const isItemIncluded = weddingList.some(product => product.id === item.id);
@@ -22,6 +21,10 @@ export const WeedingProvider = ({children}) => {
         const filteredList = weddingList.map(product => product.id === item.id ? {...product, quantity: product.quantity -1} : product ).filter(product => product.quantity !== 0);
         setWeddingList(filteredList);
     }
+
+    useEffect(()=> {
+        weddingList.length > 0 ? localStorage.setItem('@wedding_list', JSON.stringify(weddingList)) : localStorage.removeItem('@wedding_list');
+    }, [weddingList])
     
     return (
         <WeedingContext.Provider value={{weddingList, addToWeddingList, removeFromWeddingList}}>

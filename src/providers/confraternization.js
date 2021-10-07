@@ -1,10 +1,10 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 export const ConfraternizationContext = createContext();
 
 export const ConfraternizationProvider = ({children}) => {
     
-    const [confraternizationList, setConfraternizationList] = useState([]);
+    const [confraternizationList, setConfraternizationList] = useState(JSON.parse(localStorage.getItem('@confraternization_list')) || []);
 
     const addToConfraternizationList = (item) => {
         const isItemIncluded = confraternizationList.some(product => product.id === item.id);
@@ -22,6 +22,10 @@ export const ConfraternizationProvider = ({children}) => {
         const filteredList = confraternizationList.map(product => product.id === item.id ? {...product, quantity: product.quantity -1} : product ).filter(product => product.quantity !== 0);
         setConfraternizationList(filteredList);
     }
+
+    useEffect(()=> {
+        confraternizationList.length > 0 ? localStorage.setItem('@confraternization_list', JSON.stringify(confraternizationList)) : localStorage.removeItem('@confraternization_list');
+    }, [confraternizationList])
 
     return (
         <ConfraternizationContext.Provider value={{confraternizationList, addToConfraternizationList, removeFromConfraternizationList}}>
