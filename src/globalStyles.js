@@ -11,6 +11,25 @@ const GlobalStyle = createGlobalStyle`
         text-align: center;
     }
 
+    :root {
+        --toastify-color-light: #fff;
+        --toastify-color-dark: #121212;
+        --toastify-color-info: #3498db;
+        --toastify-color-success: #2aa0dd;
+
+    }
+
+    .Toastify__toast-theme--colored.Toastify__toast--default {
+        background: black;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .Toastify__toast-theme--colored.Toastify__toast--success {
+        font-weight: bold;
+        top: 40px;
+    }
+
 `
 
 export default GlobalStyle;

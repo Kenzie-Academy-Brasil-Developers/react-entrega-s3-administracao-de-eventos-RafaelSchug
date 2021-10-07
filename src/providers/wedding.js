@@ -1,4 +1,6 @@
 import { createContext, useContext, useState, useEffect  } from "react";
+import { toast } from 'react-toastify';
+
 
 export const WeedingContext = createContext();
 
@@ -15,6 +17,8 @@ export const WeedingProvider = ({children}) => {
             const newList = weddingList.map(product => product.id === item.id ? {...product, quantity: product.quantity + 1} : product)
             setWeddingList(newList)
         }
+
+        toast.success(`[${item.name}] adicionado à Wedding`, {autoClose: 2000})
     }
 
     const removeFromWeddingList = (item) => {

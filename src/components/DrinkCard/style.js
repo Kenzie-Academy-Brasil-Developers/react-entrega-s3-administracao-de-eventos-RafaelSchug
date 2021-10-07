@@ -28,7 +28,7 @@ export const Container = styled.div`
         color: #848484;
         border-radius: 6px;
         width: 100%;
-        height: 30px;
+        height: 40px;
         border: none;
         font-weight: bold;
         cursor: pointer;
@@ -61,7 +61,7 @@ export const Container = styled.div`
         
         button {
             width: 100%;
-            height: 30px;
+            height: 40px;
             background: #f1f1f1;
             color: #848484;
             border: none;
@@ -109,5 +109,16 @@ export const Container = styled.div`
     :nth-child(even){
         animation: anim_card .4s 1 ease-in-out;
     }
+
+    @media screen and (max-width: 650px){
+        .add-to__container button {
+            background: linear-gradient(75deg,#7cdd9e,#6bc5c9);
+            color: #f1f1f1;
+        }
+
+        flex: 1;
+        
+    }
+
     
 `

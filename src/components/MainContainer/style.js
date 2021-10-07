@@ -22,7 +22,7 @@ export const Container = styled.div`
     }
 
     .placeholder {
-        min-height: calc(100vh - 100px);
+        min-height: calc(100vh - 160px);
         height: 100%;
         display: flex;
         flex-direction: column;

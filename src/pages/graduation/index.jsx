@@ -19,6 +19,8 @@ const Graduation = () => {
                                 <DrinkCard key={index}>
                                     <h4>{item.name}</h4>
                                     <img src={item.image_url} alt={item.name} />
+                                    <p>Fabricação: {item.first_brewed}</p>
+                                    <p>Litros: {item.volume.value}L</p>
                                     <p>Quantidade: {item.quantity}</p>
                                     <button onClick={()=> removeFromGraduationList(item)}><FaMinusSquare/>Remover</button>
                         

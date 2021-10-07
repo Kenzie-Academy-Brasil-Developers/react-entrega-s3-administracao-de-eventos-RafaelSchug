@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { toast } from 'react-toastify';
 
 export const ConfraternizationContext = createContext();
 
@@ -15,6 +16,8 @@ export const ConfraternizationProvider = ({children}) => {
             const newList = confraternizationList.map(product => product.id === item.id ? {...product, quantity: product.quantity + 1} : product)
             setConfraternizationList(newList)
         }
+
+        toast.success(`[${item.name}] adicionado à Confraternization`, {autoClose: 2000})
         
     }
 
